@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - WanderPoint
+  - TalkPoint
   layers:
   - Default
   - TransparentFX

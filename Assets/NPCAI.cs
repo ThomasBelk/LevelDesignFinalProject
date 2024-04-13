@@ -9,9 +9,12 @@ public class NPCAI : MonoBehaviour
     [SerializeField] private GameObject[] wanderPoints;
     [SerializeField] private Transform talkPoint;
     [SerializeField] private GameObject player;
+    [SerializeField] private AudioClip sound;
     private Animator anim; 
     private NavMeshAgent agent;
     private bool hasTalked = false;
+    private bool doneTalking = false;
+    private AudioSource audioSource;
 
     // Start i called before the first frame update
     void Start()
@@ -26,16 +29,27 @@ public class NPCAI : MonoBehaviour
             player = GameObject.FindGameObjectWithTag("Player");
         }
 
+        if (talkPoint == null)
+        {
+            talkPoint = GameObject.FindGameObjectWithTag("TalkPoint").transform;
+        }
+
         anim = GetComponent<Animator>();
         anim.SetInteger("animState", 1);
         agent = GetComponent<NavMeshAgent>();
+        audioSource = GetComponent<AudioSource>();
+
+        if (sound != null)
+        {
+            audioSource.clip = sound;
+        }
         
         agent.SetDestination(talkPoint.position);
     }
 
     private void Update()
     {
-        if (Vector3.Distance(transform.position, talkPoint.position) <= agent.stoppingDistance + .1f)
+        if (Vector3.Distance(transform.position, talkPoint.position) <= agent.stoppingDistance + .1f && !doneTalking)
         {
             agent.speed = 0f;
             LookAt(player.transform.position);
@@ -44,16 +58,21 @@ public class NPCAI : MonoBehaviour
             if (!hasTalked)
             {
                 anim.SetTrigger("Talk");
+                audioSource.Play();
                 hasTalked = true;
             }
-            // if (anim.GetInteger("animState") != 2 && anim.GetInteger("animState") != 0)
-            // {
-            //     anim.SetInteger("animState", 2);
-            // }
-            // else
-            // {
-            //     anim.SetInteger("animState", 0);
-            // }
+            else
+            {
+                if (!audioSource.isPlaying)
+                {
+                    doneTalking = true;
+                }
+            }
+
+        }
+        else if (doneTalking)
+        {
+            Debug.Log("Done Talking");
         }
     }
     
@@ -65,8 +84,8 @@ public class NPCAI : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, 10 * Time.deltaTime);
     }
 
-    public void ReturnToIdle()
-    {
-        anim.SetInteger("animState", 0);
-    }
+    // public void ReturnToIdle()
+    // {
+    //     anim.SetInteger("animState", 0);
+    // }
 }
