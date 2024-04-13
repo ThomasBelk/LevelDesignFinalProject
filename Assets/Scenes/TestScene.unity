@@ -17372,6 +17372,74 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6396554571925715887}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7589944854131630449
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1155652834037040440, guid: 25c7529e24537334bb92e303956c6462,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 18.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1155652834037040440, guid: 25c7529e24537334bb92e303956c6462,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1155652834037040440, guid: 25c7529e24537334bb92e303956c6462,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 1155652834037040440, guid: 25c7529e24537334bb92e303956c6462,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1155652834037040440, guid: 25c7529e24537334bb92e303956c6462,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1155652834037040440, guid: 25c7529e24537334bb92e303956c6462,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1155652834037040440, guid: 25c7529e24537334bb92e303956c6462,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1155652834037040440, guid: 25c7529e24537334bb92e303956c6462,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1155652834037040440, guid: 25c7529e24537334bb92e303956c6462,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1155652834037040440, guid: 25c7529e24537334bb92e303956c6462,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4507158389467783354, guid: 25c7529e24537334bb92e303956c6462,
+        type: 3}
+      propertyPath: m_Name
+      value: CarPoint
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 25c7529e24537334bb92e303956c6462, type: 3}
 --- !u!114 &7750195960490022416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17386,6 +17454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wanderPoints: []
   talkPoint: {fileID: 0}
+  carPoint: {fileID: 0}
   player: {fileID: 0}
   sound: {fileID: 8300000, guid: 2949aff97f7374a4fb65a616cbd0735c, type: 3}
 --- !u!195 &7750195960490022417
@@ -17597,3 +17666,4 @@ SceneRoots:
   - {fileID: 1007592742}
   - {fileID: 1954093937}
   - {fileID: 1208623761}
+  - {fileID: 7589944854131630449}

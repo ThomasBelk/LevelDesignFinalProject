@@ -6,6 +6,7 @@ TagManager:
   tags:
   - WanderPoint
   - TalkPoint
+  - CarPoint
   layers:
   - Default
   - TransparentFX
