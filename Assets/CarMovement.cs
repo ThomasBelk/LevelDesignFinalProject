@@ -10,36 +10,40 @@ public class CarMovement : MonoBehaviour
     public SplineContainer cont2;
     public bool test = false;
     private bool switched = false;
+    public GameObject npc;
+    public Transform spawnpoint;
 
     public Transform stopPos;
-    // Start is called before the first frame update
     void Start()
     {
-        //anim.GetComponent<SplineAnimate>();
-        //anim.Play();
+        if (spawnpoint == null)
+        {
+            spawnpoint = GameObject.FindGameObjectWithTag("CarPoint").transform;
+        }
+        anim.Container = cont1;
+        anim.Play();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (test)
+        if (anim.ElapsedTime >= anim.MaxSpeed && !test) 
         {
-            if (!switched)
-            {
-                anim.ElapsedTime = 0;
-                switched = true;
-            }
-            anim.Container = cont2;
+            GameObject newNPC = Instantiate(npc, transform);
+            newNPC.GetComponent<NPCAI>().GetCar(this);
+            test = true;
         }
-        else
-        {
-            anim.Container = cont1;
-            if (anim.ElapsedTime >= anim.MaxSpeed)
-            {
-                test = true;
-            }
-        }
+    }
 
-        //Debug.Log(anim.Container.Splines[anim.Container.Splines.Count - 1].Knots.);
+    public void DriveAway()
+    {
+        if (!switched)
+        {
+            anim.ElapsedTime = 0;
+            switched = true;
+        }
+        anim.Container = cont2;
+        anim.Play();
     }
 }

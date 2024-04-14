@@ -31,6 +31,7 @@ public class NPCAI : MonoBehaviour
     private float npcSpeed;
 
     private LinkedList<GameObject> chosenWanderPoints;
+    private CarMovement carMovement;
 
     // Start i called before the first frame update
     void Start()
@@ -163,14 +164,20 @@ public class NPCAI : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, carPoint.position) <= .5f)
         {
-            Destroy(gameObject);
+            carMovement.DriveAway();
+            Destroy(gameObject, 1f);
             return;
         }
         agent.stoppingDistance = 0f;
         agent.autoBraking = false;
         agent.SetDestination(carPoint.position);
     }
-    
+
+    public void GetCar(CarMovement car)
+    {
+        carMovement = car;
+    }
+
 
     // public void ReturnToIdle()
     // {

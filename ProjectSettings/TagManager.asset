@@ -7,6 +7,7 @@ TagManager:
   - WanderPoint
   - TalkPoint
   - CarPoint
+  - NPC
   layers:
   - Default
   - TransparentFX
@@ -14,7 +15,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Door
   - 
   - 
   - 
