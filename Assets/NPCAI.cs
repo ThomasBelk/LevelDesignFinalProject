@@ -17,13 +17,15 @@ public class NPCAI : MonoBehaviour
     }
 
     private NPCSTATE state;
-    
+
     [SerializeField] private GameObject[] wanderPoints;
     [SerializeField] private Transform talkPoint;
     [SerializeField] private Transform carPoint;
     [SerializeField] private GameObject player;
     [SerializeField] private AudioClip sound;
-    private Animator anim; 
+
+
+private Animator anim; 
     private NavMeshAgent agent;
     private bool hasTalked = false;
     private bool doneTalking = false;
@@ -177,6 +179,8 @@ public class NPCAI : MonoBehaviour
     {
         carMovement = car;
     }
+    
+    
 
 
     // public void ReturnToIdle()
