@@ -9,7 +9,6 @@ public class CarMovement : MonoBehaviour
     public SplineContainer cont1;
     public SplineContainer cont2;
     public bool test = false;
-    public AudioClip startEngine;
     public AudioClip engineSound;
     private AudioSource audioSource;
     private bool switched = false;
