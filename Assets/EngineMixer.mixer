@@ -42,6 +42,25 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!243 &-2649250378297909510
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Bell
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 9d5eca55f2a006f44aa3f94e2fb0548d
+  m_Children: []
+  m_Volume: ac4edfbf0c806df45b48918519a78e00
+  m_Pitch: 44a6f8d384775484d80ee6db554d0a89
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 4253733006348644072}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!241 &24100000
 AudioMixerController:
   m_ObjectHideFlags: 0
@@ -63,6 +82,7 @@ AudioMixerController:
     - 7875940086867f24d90733558f026a0c
     - ec2ad2adbf286a1489b7881016e17cb8
     - ad806fbe4eb073c45a64202a1db6a403
+    - 9d5eca55f2a006f44aa3f94e2fb0548d
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -78,6 +98,7 @@ AudioMixerGroupController:
   m_Children:
   - {fileID: 5186873574041638080}
   - {fileID: 3538200041785111188}
+  - {fileID: -2649250378297909510}
   m_Volume: 1319b68b9df0e5b44a3be65bed5015fa
   m_Pitch: 6f7559796e86da647b48b360c14bd79b
   m_Send: 00000000000000000000000000000000
@@ -138,6 +159,20 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!244 &4253733006348644072
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: cf824e45e0a50b54aa0c265ee2e8ea74
+  m_EffectName: Attenuation
+  m_MixLevel: e572e4977fd561044882f7c84e4a9bcd
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!243 &5186873574041638080
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
