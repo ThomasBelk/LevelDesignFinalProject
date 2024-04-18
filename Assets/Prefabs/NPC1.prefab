@@ -2786,6 +2786,12 @@ MonoBehaviour:
   player: {fileID: 0}
   sound: {fileID: 8300000, guid: 2949aff97f7374a4fb65a616cbd0735c, type: 3}
   footSteps: {fileID: 3892631409358539156}
+  gasp: {fileID: 8300000, guid: 774647b401390c24f84a94ed34407da1, type: 3}
+  heartbeat: {fileID: 8300000, guid: decd715c4ac7ae2409681b1a8d4ad897, type: 3}
+  playervoice: {fileID: 6177047221926464686, guid: 69dce7e3f4147f64c8f073aa2b34213c,
+    type: 2}
+  heartBeatGroup: {fileID: 3758306746777478811, guid: 69dce7e3f4147f64c8f073aa2b34213c,
+    type: 2}
 --- !u!82 &2780180394024562879
 AudioSource:
   m_ObjectHideFlags: 0

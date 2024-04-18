@@ -45,8 +45,15 @@ public class CarMovement : MonoBehaviour
         {
             //engineSound.Stop();
             StartCoroutine(FadeOut(engineSound, engineTurnOffTime));
-            GameObject newNPC = Instantiate(npc, spawnpoint.transform);
-            newNPC.GetComponent<NPCAI>().GetCar(this);
+            if (npc == null)
+            {
+                Invoke("DriveAway", 4f);
+            }
+            else
+            {
+                GameObject newNPC = Instantiate(npc, spawnpoint.transform);
+                newNPC.GetComponent<NPCAI>().GetCar(this);
+            }
             test = true;
         } else if (anim.ElapsedTime >= anim.MaxSpeed && switched)
         {

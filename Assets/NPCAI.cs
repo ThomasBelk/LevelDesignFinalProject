@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Audio;
 using Random = UnityEngine.Random;
 
 public class NPCAI : MonoBehaviour
@@ -26,8 +27,11 @@ public class NPCAI : MonoBehaviour
 
     [SerializeField] private AudioSource footSteps;
 
+    [SerializeField] private AudioClip gasp;
+    [SerializeField] private AudioClip heartbeat;
 
-private Animator anim; 
+
+    private Animator anim; 
     private NavMeshAgent agent;
     private bool hasTalked = false;
     private bool doneTalking = false;
@@ -36,7 +40,12 @@ private Animator anim;
 
     private LinkedList<GameObject> chosenWanderPoints;
     private CarMovement carMovement;
-
+    private bool firstTime = true;
+    private bool firstTime2 = true;
+    private AudioSource pa;
+    public AudioMixerGroup playervoice;
+    public AudioMixerGroup heartBeatGroup;
+    
     // Start i called before the first frame update
     void Start()
     {
@@ -81,6 +90,7 @@ private Animator anim;
         
         npcSpeed = agent.speed;
         agent.SetDestination(talkPoint.position);
+        pa = player.gameObject.GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -126,6 +136,23 @@ private Animator anim;
         if (!footSteps.isPlaying)
         {
             footSteps.Play();
+        }
+
+        if (firstTime)
+        {
+            pa.outputAudioMixerGroup = playervoice;
+            pa.clip = gasp;
+            pa.Play();
+            
+            firstTime = false;
+        }
+
+        if (!pa.isPlaying && firstTime2 && !firstTime)
+        {
+            pa.outputAudioMixerGroup = heartBeatGroup;
+            pa.clip = heartbeat;
+            pa.Play();
+            firstTime2 = false;
         }
     }
 
