@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: road mark
   m_Shader: {fileID: 4800000, guid: 6e4ae4064600d784cac1e41a9e6f2e59, type: 3}
-  m_Parent: {fileID: 2100000, guid: a3cbaaa492f344c478ddd1536139c7ef, type: 2}
+  m_Parent: {fileID: 2100000, guid: c27ec634fc00bcd43b4cc5313fbcedbb, type: 2}
   m_ModifiedSerializedProperties: 16
   m_ValidKeywords:
   - _ALPHATEST_ON
