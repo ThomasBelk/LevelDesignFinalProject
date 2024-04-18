@@ -368,8 +368,13 @@ MonoBehaviour:
   cont1: {fileID: 7176448044265521912}
   cont2: {fileID: 7492307403134748724}
   test: 0
+  startEngine: {fileID: 0}
+  engineSound: {fileID: 0}
   npc: {fileID: 7988895468193009847, guid: 2123b7899893aaa4b9dc9d19b169706f, type: 3}
   spawnpoint: {fileID: 0}
+  engineTurnOffTime: 0.2
+  minWaitTimeBetweenCars: 15
+  maxWaitTimeBetweenCars: 20
   stopPos: {fileID: 0}
 --- !u!4 &5943871306059632425 stripped
 Transform:

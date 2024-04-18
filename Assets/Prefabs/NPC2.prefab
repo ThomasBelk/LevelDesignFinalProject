@@ -2695,7 +2695,7 @@ GameObject:
   - component: {fileID: 55507784460072524}
   - component: {fileID: 2556006655801202145}
   m_Layer: 0
-  m_Name: NPC1
+  m_Name: NPC2
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2784,7 +2784,7 @@ MonoBehaviour:
   talkPoint: {fileID: 0}
   carPoint: {fileID: 0}
   player: {fileID: 0}
-  sound: {fileID: 8300000, guid: dc92fe924f920bd45b519f83efe5ea70, type: 3}
+  sound: {fileID: 8300000, guid: f2a53a1aae0d2014daeb2dfc3834baee, type: 3}
   footSteps: {fileID: 3892631409358539156}
   gasp: {fileID: 8300000, guid: 774647b401390c24f84a94ed34407da1, type: 3}
   heartbeat: {fileID: 8300000, guid: decd715c4ac7ae2409681b1a8d4ad897, type: 3}

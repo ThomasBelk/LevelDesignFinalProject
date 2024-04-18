@@ -27,19 +27,20 @@ public class GameManager : MonoBehaviour
 
         
         delayStart = Time.time;
-        Debug.Log(startTime);
+        //Debug.Log(startTime);
         while (Time.time < startTime + time)
         {
             yield return null;
         }
-        Debug.Log("time waited" + time);
         
         if (currentIndex + 1 < cars.Length)
         {
             cars[currentIndex + 1].SetActive(true);
+            Debug.Log("next");
         }
         cars[currentIndex].SetActive(false);
-        
+        currentIndex++;
+
         // Debug.Log("Delay time: " + newCarDelay);
         // while (Time.time <= delayStart + newCarDelay)
         // {
