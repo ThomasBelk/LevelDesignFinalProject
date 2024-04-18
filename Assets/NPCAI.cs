@@ -24,6 +24,8 @@ public class NPCAI : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private AudioClip sound;
 
+    [SerializeField] private AudioSource footSteps;
+
 
 private Animator anim; 
     private NavMeshAgent agent;
@@ -119,11 +121,17 @@ private Animator anim;
         {
             state = NPCSTATE.Talk;
         }
-        
+
+        footSteps.loop = true;
+        if (!footSteps.isPlaying)
+        {
+            footSteps.Play();
+        }
     }
 
     private void Talk()
     {
+        footSteps.loop = false;
         agent.speed = 0f;
         LookAt(player.transform.position);
         agent.SetDestination(transform.position);
@@ -144,6 +152,11 @@ private Animator anim;
 
     private void Wander()
     {
+        footSteps.loop = true;
+        if (!footSteps.isPlaying)
+        {
+            footSteps.Play();
+        }
         agent.speed = npcSpeed;
         anim.SetInteger("animState", 1);
         if (chosenWanderPoints.Count <= 0)
@@ -164,6 +177,11 @@ private Animator anim;
 
     private void WalkOut()
     {
+        footSteps.loop = true;
+        if (!footSteps.isPlaying)
+        {
+            footSteps.Play();
+        }
         if (Vector3.Distance(transform.position, carPoint.position) <= .5f)
         {
             carMovement.DriveAway();
