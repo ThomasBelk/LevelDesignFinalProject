@@ -8,6 +8,7 @@ TagManager:
   - TalkPoint
   - CarPoint
   - NPC
+  - GameManager
   layers:
   - Default
   - TransparentFX

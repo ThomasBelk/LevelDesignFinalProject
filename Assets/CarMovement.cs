@@ -17,7 +17,13 @@ public class CarMovement : MonoBehaviour
     public Transform spawnpoint;
     public float engineTurnOffTime = .2f;
 
+    public float minWaitTimeBetweenCars = 5f;
+    public float maxWaitTimeBetweenCars = 15f;
+
     public Transform stopPos;
+
+
+    private GameManager gameManager;
     
     void Start()
     {
@@ -25,6 +31,8 @@ public class CarMovement : MonoBehaviour
         {
             spawnpoint = GameObject.FindGameObjectWithTag("CarPoint").transform;
         }
+
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
 
         anim = GetComponent<SplineAnimate>();
         anim.Play();
@@ -40,6 +48,10 @@ public class CarMovement : MonoBehaviour
             GameObject newNPC = Instantiate(npc, spawnpoint.transform);
             newNPC.GetComponent<NPCAI>().GetCar(this);
             test = true;
+        } else if (anim.ElapsedTime >= anim.MaxSpeed && switched)
+        {
+            StartCoroutine(FadeOut(engineSound, 1f));
+            StartCoroutine(gameManager.NewCar(Random.Range(minWaitTimeBetweenCars, maxWaitTimeBetweenCars)));
         }
     }
 
