@@ -12,16 +12,21 @@ public class FlickeringLight : MonoBehaviour
 
     public Material offMat;
     public Material onMat;
+    private bool changeMaterials = true;
 
     //public AudioSource audio;
     private MeshRenderer meshRend;
     public int materialsIndex = 1;
-    
+
     void Start()
     {
         timer = Random.Range(minTime, maxTime);
         meshRend = GetComponent<MeshRenderer>();
-    }
+        if (offMat == null || onMat == null)
+        {
+            changeMaterials = false;
+        }
+    }   
 
     void Update()
     {
@@ -38,18 +43,22 @@ public class FlickeringLight : MonoBehaviour
         if (timer <= 0)
         {
             light.enabled = !light.enabled;
-            if (light.enabled)
+            if (changeMaterials)
             {
-                var copy = meshRend.materials;
-                copy[materialsIndex] = onMat;
-                meshRend.materials = copy;
+                if (light.enabled)
+                {
+                    var copy = meshRend.materials;
+                    copy[materialsIndex] = onMat;
+                    meshRend.materials = copy;
+                }
+                else
+                {
+                    var copy = meshRend.materials;
+                    copy[materialsIndex] = offMat;
+                    meshRend.materials = copy;
+                }
             }
-            else
-            {
-                var copy = meshRend.materials;
-                copy[materialsIndex] = offMat;
-                meshRend.materials = copy;
-            }
+
             timer = Random.Range(minTime, maxTime);
             
         }
